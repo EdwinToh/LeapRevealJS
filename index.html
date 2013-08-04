@@ -1,0 +1,73 @@
+<!html>
+<head>
+    <title>Leap rvl.io (RevealJS) Controller - by Garage Interactive</title>
+    <link href='http://fonts.googleapis.com/css?family=GFS+Didot' rel='stylesheet' type='text/css'>
+
+    <meta property="og:title" content="Leap rvl.io (RevealJS) Controller - by Garage Interactive"/>
+    <meta property="og:description" content="Enable Leap for rvl.io! Use gestures to control your presentations!"/>
+    <meta property="og:image" content="http://garage-interactive.com/leaprevealjs/facebook.png?v2"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://garage-interactive.com/leaprevealjs/"/>
+    <meta property="fb:app_id" content="116987931828060"/>
+
+    <style>
+        html, body{
+            font-family: 'GFS Didot', serif;
+            font-size: 14px;
+            background: url('img/dot.png');
+        }
+        .container {
+            position: relative;
+            margin: 0 auto;
+            width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border: #ed1c24 10px solid;
+            box-shadow: 20px 20px 0 #2e3192;
+            text-align: center;
+        }
+        .grey {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<img src="img/logo.png" alt="Garage Interactive">
+
+<h1>Leap rvl.io (RevealJS) Controller</h1>
+
+<a href="javascript:(function(){if(typeof Leap=='undefined'){var jsCode=document.createElement('script');jsCode.setAttribute('src','http://garage-interactive.com/leaprevealjs/leap.min.js');jsCode.onload=runScript;document.body.appendChild(jsCode);}else{runScript();}function runScript(){var fingers={};var spheres={};var _html=document.body;var now;var lastSwipe=0;Leap.loop({enableGestures:true},function(frame){now=new Date().getTime();if(lastSwipe===0){lastSwipe=now;}if(now-lastSwipe>500){var gestures=frame.data.gestures;for(var i=0;i<gestures.length;i++){var gesture=gestures[i];if(gesture.type=='swipe'){var swipe=gesture;if(swipe.speed>1000&&Math.abs(swipe.direction[0])>Math.abs(swipe.direction[1])){if(swipe.direction[0]>0){console.log('left');Reveal.navigateLeft();}else if(swipe.direction[0]<0){console.log('right');Reveal.navigateRight();}lastSwipe=now;break;}else{if(swipe.direction[1]<0){console.log('up');Reveal.navigateUp();}else if(swipe.direction[1]>0){console.log('down');Reveal.navigateDown();}lastSwipe=now;break;}}}}});}})();" name="Leap Bookmarklet" title="Leap RevealJS Bookmarklet"><img src="img/dragbookmarklet.png"  alt="Leap RevealJS Bookmarklet" /></a>
+
+<p class="grey">Version 0.1</p>
+<p>This bookmarklet enables gestures on any <a href="http://www.rvl.io/edwintoh/about-me" target="_blank">rvl.io</a> or <a href="http://lab.hakim.se/reveal-js/" target="_blank">RevealJS</a> presentation <br/>with the Leap Motion.</p>
+<p>
+<span class="grey">Instructions:</span><br/>
+Drag the above link to your bookmark toolbar. <br>
+Visit any <a href="http://www.rvl.io/edwintoh/about-me" target="_blank">rvl.io</a> or <a href="http://lab.hakim.se/reveal-js/" target="_blank">RevealJS</a> presentation, click on the bookmark, and start to swipe! 
+</p>
+<p>
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgarage-interactive.com%2Fleaprevealjs%2F&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=116987931828060" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://garage-interactive.com/leaprevealjs/" data-text="Control your rvl.io or RevealJS presentation with the Leap Motion" data-via="garageint" data-related="garageint" data-hashtags="leapmotion">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</p>
+</div>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37355894-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>
